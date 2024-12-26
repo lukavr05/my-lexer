@@ -4,7 +4,7 @@
 
 #define MAX_LENGTH = 100
 
-bool isValidChar(char c, char *validChars) {
+bool isValidChar(char c, char validChars[]) {
   while (*validChars) {
     if (*validChars == c) {
       return true;
@@ -13,10 +13,18 @@ bool isValidChar(char c, char *validChars) {
   return false;
 }
 
-bool isDelimiter(char c) {
-  char *delims[] = {' ', ',', '/', '(', ')', '{', '}', '[', ']'};
+bool isValidString(char *c, char *validStrings[]) {
+  return true;
+}
 
-  return isValidChar(c, *delims);
+bool isDelimiter(char c) {
+  char delims[] = {' ', ',', '/', '(', ')', '{', '}', '[', ']'};
+
+  return isValidChar(c, delims);
+}
+
+bool isOperator(char c) {
+  char ops[] = {'+', '-', '*', '/', '<', '>'};
 }
 
 int main(int argc, char *argv[])
